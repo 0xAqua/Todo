@@ -1,0 +1,24 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo List</title>
+</head>
+<body>
+    <h1>Todo List</h1>
+    <form method="POST" action="{{ url_for('main.add') }}">
+        <input type="text" name="title">
+        <input type="submit" value="Add">
+    </form>
+    <ul>
+        {% for todo in todos %}
+        <li>
+            {{ todo.title }}
+            <a href="{{ url_for('main.edit', todo_id=todo.id) }}">Edit</a>
+            <a href="{{ url_for('main.delete', todo_id=todo.id) }}">Delete</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

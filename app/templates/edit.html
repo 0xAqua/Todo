@@ -1,0 +1,16 @@
+<!-- templates/edit.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Todo</title>
+</head>
+<body>
+    <h1>Edit Todo</h1>
+    <form method="post">
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" value="{{ todo.title }}">
+        <input type="submit" value="Update">
+    </form>
+</body>
+</html>
