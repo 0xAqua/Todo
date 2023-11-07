@@ -11,9 +11,9 @@ class Todo(db.Model):
         title (str): TODO項目のタイトル。空であってはならない。
         completed (bool): TODO項目が完了したかどうか。デフォルトはFalse。
     """
-    id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(100), nullable=False)
-    completed = db.Column(db.Boolean, default=False)
+    id: int = db.Column(db.Integer, primary_key=True)
+    title: str = db.Column(db.String(100), nullable=False)
+    completed: bool = db.Column(db.Boolean, default=False)
 
     def __repr__(self) -> str:
         """TODO項目の文字列表現を提供します。"""
